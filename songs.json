@@ -1,0 +1,22 @@
+{
+    "songs": [
+      {
+        "url": "https://soundcloud.com/ambientmusicalgenre/essential-ambient-mix",
+        "title": "Ambience as Noise",
+        "author": "Clinton Van Arnam",
+        "image1": "assets/images/singing.jpeg",
+        "image2": "assets/images/2023_Lord.jpeg",
+        "description1": "This is the first mix of the index. The project started when friend and collaborator Elliott Romano and I decided to play a show and release a small print publication at The RISD Museum. We played live ambient music, with the idea of creating some sort of disruption into our hyper-fast consumer based culture, and invited friend and artist SADNOISE to join us. With this print publication, we both researched and collected artists that inspired the performance, all ambient. Doing this led me down a path of more research into thinking about ideas of utopia and sound. I became fascinated with St Giga, a Japanese ambient satellite radio service, or the Laughter Workshops of Laraajii, where the idea was to get the participants into the play-zone, creating vulnerability. ",
+        "description2": "Detailed background information about the creation of the mix."
+      },
+      {
+        "url": "https://soundcloud.com/someartist/sometrack",
+        "title": "Some Track",
+        "author": "Clinton Van Arnam",
+        "image1": "some-track-main.jpg",
+        "image2": "some-track-supporting.jpg",
+        "description1": "An introductory paragraph about the track.",
+        "description2": "The inspiration behind the track and its thematic elements..."
+      }
+    ]
+  }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundCloud Test</title>
+</head>
+<body>
+
+<iframe id="sc-player" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/ambientmusicalgenre/essential-ambient-mix&auto_play=false"></iframe>
+
+<button id="playButton">Toggle Play</button>
+
+<script src="https://w.soundcloud.com/player/api.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let widget = SC.Widget(document.getElementById('sc-player'));
+        document.getElementById('playButton').addEventListener('click', function() {
+            widget.toggle();
+        });
+    });
+</script>
+
+</body>
+</html>

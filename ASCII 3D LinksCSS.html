@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            transform-style: preserve-3d;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotateX(0)
+            } to {
+                transform: rotateX(180deg)
+            }
+        }
+
+        .content {
+            width: 0px;
+            height: 0px;
+            position: relative;
+            transition: .2s linear;
+        }
+
+        .floater-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .floater-content {
+            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
+            transition: all .2s, border 0s;
+            animation: pulse 2s infinite alternate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2000px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: rgb(147, 0, 0);
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+        }
+        #playButton {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+}
+
+      #playButton .play-icon,
+      #playButton .stop-icon {
+        width: 40px;
+        height: 40px;
+        /* fill: #dddee0; */
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      #playButton .play-icon {
+        display: none; /* Initially hidden */
+      }
+
+      #playButton[data-playing="false"] .play-icon {
+        display: inline-block;
+      }
+
+      #playButton[data-playing="false"] .stop-icon {
+        display: none;
+      }
+
+      #playButton[data-playing="true"] .stop-icon {
+        display: inline-block;
+      }
+        .floater-content:hover {
+            border: 10px solid black;
+        }
+
+        @keyframes pulse {
+            from {
+                width: 0px;
+            }
+            to {
+                width: 30px;
+            }
+        }
+
+        /* Axes */
+        .grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100dvh;
+            pointer-events: none;
+            z-index: 999;
+            opacity: .5;
+        }
+
+        .x {
+            position: absolute;
+            width: 100%;
+            height: .1px;
+            top: 50%;
+            transform: translate(0, -50%);
+            background-color: black;
+        }
+
+        .y {
+            position: absolute;
+            width: .1px;
+            height: 100%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="grid">
+        <div class="x"></div>
+        <div class="y"></div>
+    </div>
+    <div class="content">
+        <!-- Your links will be added here dynamically -->
+    </div>
+</div>
+
+<script>
+    let container = document.querySelector('.container');
+    let content = document.querySelector('.content');
+    let rot = [0, 0];
+    let pos = [0, 0];
+
+    container.addEventListener('mousemove', (e) => {
+        mouse3d(e)
+    });
+
+    function mouse3d(e) {
+        pos = [(e.clientX / window.innerWidth) * 2 - 1, (e.clientY / window.innerHeight) * 2 - 1];
+    }
+
+    let loop;
+    let acc = 10;
+
+    function mainLoop() {
+        loop = setTimeout(() => {
+            let targets = [pos[0] * 90, pos[1] * 90];
+            let delta = [targets[0] - rot[0], targets[1] - rot[1]];
+            rot[0] = rot[0] + delta[0] / acc;
+            if (rot[0] > 90) {
+                rot[0] = 90;
+            } else if (rot[0] < -90) {
+                rot[0] = -90;
+            }
+            rot[1] = rot[1] + delta[1] / acc;
+            if (rot[1] > 90) {
+                rot[1] = 90;
+            } else if (rot[1] < -90) {
+                rot[1] = -90;
+            }
+            content.style.transform = `rotateX(${rot[1]}deg) rotateY(${-rot[0]}deg)`;
+            for (let div of document.querySelectorAll('.floater-content')) {
+                div.style.transform = `translate(-50%, -50%) rotateX(${-rot[1]}deg) rotateY(${rot[0]}deg)`;
+            }
+            mainLoop();
+        }, 5);
+    }
+
+    mainLoop();
+
+    // Fetch data from info.json and create links
+    fetch('info.json')
+        .then(response => response.json())
+        .then(data => {
+            data['Sheet1'].forEach(item => {
+                const linkContainer = document.createElement('div');
+                linkContainer.className = 'floater-container';
+                linkContainer.style.transform = `translate3d(${Math.floor(Math.random() * 80 - 40)}vmin, ${Math.floor(Math.random() * 80 - 40)}vmin, ${Math.floor(Math.random() * 80 - 40)}vmin)`;
+
+                const linkContent = document.createElement('a');
+                linkContent.href = item.link;
+                linkContent.textContent = item.title;
+                linkContent.target = '_blank'; // Open links in a new tab
+                linkContent.className = 'floater-content';
+                linkContent.style.animationDuration = `${Math.random() * 5 + 1}s`;
+
+                linkContainer.appendChild(linkContent);
+                content.appendChild(linkContainer);
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+</script>
+</body>
+</html>

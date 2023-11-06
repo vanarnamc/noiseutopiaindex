@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOISE UTOPIA</title>
+ 
+  <link rel="stylesheet" href="style.css" />
+  <!-- Link to an external CSS file, if needed -->
+</head>
+
+<body>
+  <div class="container">
+    <nav class="side-nav">
+      <!-- Side navigation content goes here -->
+      <div>
+        <div>
+        UTOPIAN NOISE INDEX
+        <br />
+        <span class="stars">**********************************</span></div>
+        <div class="side-nav-paragraph">
+          The noise utopia index is a cummulted collection of ways various
+          artists, musicians, and thinkers have explored the idea of creating
+          a better world through noise. Here, noise is defiined as some sort
+          of disruption into the larger system. For this specific collection,
+          the criteria has to relate to sound. Sound is crucial element in the
+          way we have originally perceived noise, and this collection hopes to
+          open a wider understanding in different ways to communicate through
+          noise. The noise utopia index is a cummulted collection of ways
+          various artists, musicians, and thinkers have explored the idea of
+          creating a better world through noise. The noise utopia index is a cummulted collection of ways
+          various artists, musicians, and thinkers have explored the idea of
+          creating a better world through noise. 
+          
+        </div>
+        <!-- <div class="side-nav-weather">
+       
+          <div class="current-date" id="date">Date: Loading...</div>
+          <div class="current-time" id="time">Time: Loading...</div>
+          <div class="current-weather">
+            Weather: <span id="weather-data">Loading...</span>
+          </div>
+        </div> -->
+      </div>
+
+        
+      
+     <div>
+      <!-- menu links -->
+      <div class="side-nav-links">
+        <a href="index.html">[HOME]</a>
+        <a href="about.html">ABOUT PROJECT ↗</a>
+        <a href="#">MIX INDEX ↗</a>
+      </div>
+
+      <!-- weather time etc  -->
+     
+       
+
+        <div>
+        <div class="currently-playing clickable">NOISE MIX PLAYER</div>
+        
+        <div class="white-line"></div>
+        <div class="web-player" style="width: 100%;">
+          <div class="soundcloud-player-button">
+            <button id="playButton" data-playing="false" style="background: none; cursor: pointer">
+              <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                preserveAspectRatio="xMidYMid meet" width="40px" height="100%">
+                <path d="M8 5v14l11-7z" fill="#ffffff" />
+              </svg>
+              <svg class="stop-icon" style="display: none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                preserveAspectRatio="xMidYMid meet" width="40px" height="100%">
+                <path d="M6 6h12v12H6z" fill="#ffffff" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div id="soundcloud-player" style="display: none">
+        <!-- The SoundCloud player will be embedded here -->
+      </div>
+    </nav>
+    <!-- Main content container -->
+    <div class="content-container">
+      <!-- Filters Section -->
+      <div id="filters" class="filters">
+        <!-- Filter items go here -->
+      </div>
+
+      <!-- Grid Section -->
+      <div class="grid-container">
+        <!-- Grid items go here -->
+      </div>
+
+      <!-- Popup Overlay -->
+      <div class="popup-overlay" id="songPopup">
+        <button class="close-btn" onclick="closePopup()">X</button>
+
+        <div class="popup-content">
+          <h1 id="songTitle"></h1>
+          <h2 id="songAuthor"></h2>
+          <div id="songContent">
+            <p id="description1" class="song-description"></p>
+          </div>
+          <div id="songImages" class="image-container">
+            <img id="image1" src="" alt="Image 1">
+            <img id="image2" src="" alt="Image 2">
+          </div>
+          <div id="songContent">
+            <p id="description2" class="song-description"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://w.soundcloud.com/player/api.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
