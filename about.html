@@ -12,11 +12,18 @@
 
 <body>
   <div class="container">
+    <div id="hamburger-menu" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
     <nav class="side-nav">
       <!-- Side navigation content goes here -->
       <div>
         <div>
-          UTOPIAN NOISE INDEX
+          <a href="index.html" style="color:white">
+          UTOPIAN NOISE INDEX</a>
           <br />
           <span class="stars">**********************************</span>
         </div>
@@ -50,8 +57,8 @@
       <div>
         <!-- menu links -->
         <div class="side-nav-links">
-          <a href="index.html">[HOME]</a>
-          <a href="about.html">ABOUT PROJECT ↗</a>
+          <a href="index.html">HOME ↗</a>
+          <a href="about.html">[ABOUT PROJECT]</a>
           <a href="#">MIX INDEX ↗</a>
         </div>
 
@@ -94,42 +101,32 @@
     <div class="about-content-container">
       <!-- This is where the new about page content will go -->
 
-      <p class="about-text">
-        UTOPIAN NOISE INDEX <br><br>
-
-        Human culture is built on auditory experience, where sound is not just heard but felt, and deeply understood.
-        This project is an attempt to curate a selection of the intersection of music and noise, through ideas of
-        utopia. Each entry, whether an ambient composition, an essay, or a disco track represents a disruption in the
-        systems at large. From the ideas of radical peace, and slowness inspired by <span id="ref-01">ambient music <a href="#citation1" onclick="highlightCitation('ref-01', 'citation1');">
-        [01]</a></span>, to the house tracks created in <span id="ref-02">Detroit <a href="#citation2" onclick="highlightCitation('ref-02', 'citation2');">[02]</a> </span>to push back
-        against the dominant class, this index represents a curation towards a way to imagine a different world through
-        sound. <!-- Add more content about the project here -->
-      <p class="about-text">
-        This index celebrates the pioneers of sound who have thought in radical ways of creating moments of peace, and
-        who have pushed the boundaries of what is musically possible. From the<span id="ref-03"> singing sands<a href="#citation3" onclick="highlightCitation('ref-03', 'citation3');">[03] </a></span>that add to the
-        humbling aspect of nature, and how little we know, to the <span id="ref-04">ancient shamans<a href="#citation4" onclick="highlightCitation('ref-04', 'citation4');">[04]</a> </span> to artists working with
-        <span id="ref-05">generative music <a href="#citation5" onclick="highlightCitation('ref-05', 'citation5');">[05]</a></span> to platforms rethinking media structures, the curation offers new possibilities in the
-        world of noise, and sound.
-      </p>
-      <p class="about-text">
-        Echo of Utopia’s mission is to preserve the legacy of the musicians, writers, and more who have contributed to
-        the idea of creating a world of sonic legacy, and harmony. Artist like Brian Eno, who coineed the term <span id="ref-06"> Ambient
-        Music<a href="#citation6" onclick="highlightCitation('ref-06', 'citation6');">[06]</a></span> in 1973, which led to artists such as Grouper who creates ethereal layers inspired by Eno’s thoughts.
-        But past music alone, the index is also interested in preserving new ways to think of sound like the <span id="ref-07"> Laughter
-        Workshop<a href="#citation7" onclick="highlightCitation('ref-07', 'citation7');">[07]</a></span>led by Laraaji or the <span id="ref-08">Aeolian Interface Project<a href="#citation8" onclick="highlightCitation('ref-08', 'citation8');">[08]</a></span>, which aimed to bridge new ways to generate
-        sound through nature.
-      </p>
-
-      <p class="about-text">
-        This index is not static. It is a living document that is constantly evolving, just like culture. The list acts
-        as an open invitation to collaborators. The collaborations will involve selecting work from the archive,
-        generating a mix with the work, and also contributing to the archive with their own selection.
-      </p>
-
-      <p class="about-text">
-        As the index continues to evolve, the EOU aims to represent the power of sound to reshape our reality. The index
-        is an invitation to rethink our sonic past as well as our future.
-      </p>
+    
+        <p class="about-text">
+          UTOPIAN NOISE INDEX <br><br>
+        
+          Human culture is built on auditory experience, where sound is not just heard but felt, and deeply understood.
+          This project is an attempt to curate a selection of the intersection of music and noise, through ideas of
+          utopia. Each entry, whether an ambient composition, an essay, or a disco track represents a disruption in the
+          systems at large. From the ideas of radical peace, and slowness inspired by <span id="ref-01"><a href="#citation1" onclick="highlightCitation('ref-01', 'citation1');">ambient music [01]</a></span>, to the house tracks created in <span id="ref-02"><a href="#citation2" onclick="highlightCitation('ref-02', 'citation2');">Detroit [02]</a></span> to push back
+          against the dominant class, this index represents a curation towards a way to imagine a different world through
+          sound. <!-- Add more content about the project here -->
+        </p>
+        <p class="about-text">
+          This index celebrates the pioneers of sound who have thought in radical ways of creating moments of peace, and
+          who have pushed the boundaries of what is musically possible. From the<span id="ref-03"><a href="#citation3" onclick="highlightCitation('ref-03', 'citation3');">singing sands [03]</a></span>that add to the
+          humbling aspect of nature, and how little we know, to the<span id="ref-04"><a href="#citation4" onclick="highlightCitation('ref-04', 'citation4');">ancient shamans [04]</a></span> to artists working with
+          <span id="ref-05"><a href="#citation5" onclick="highlightCitation('ref-05', 'citation5');">generative music [05]</a></span> to platforms rethinking media structures, the curation offers new possibilities in the
+          world of noise, and sound.
+        </p>
+        <p class="about-text">
+          Echo of Utopia’s mission is to preserve the legacy of the musicians, writers, and more who have contributed to
+          the idea of creating a world of sonic legacy, and harmony. Artist like Brian Eno, who coined the term<span id="ref-06"><a href="#citation6" onclick="highlightCitation('ref-06', 'citation6');">Ambient
+          Music [06]</a></span> in 1973, which led to artists such as Grouper who creates ethereal layers inspired by Eno’s thoughts.
+          But past music alone, the index is also interested in preserving new ways to think of sound like the<span id="ref-07"><a href="#citation7" onclick="highlightCitation('ref-07', 'citation7');">Laughter
+          Workshop [07]</a></span>led by Laraaji or the<span id="ref-08"><a href="#citation8" onclick="highlightCitation('ref-08', 'citation8');">Aeolian Interface Project [08]</a></span>, which aimed to bridge new ways to generate
+          sound through nature.
+        </p>
 
       </p>
       

@@ -11,10 +11,16 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       populateGridAndFilters(); // Populate grid and filters
     });
+// Open the mobile nav
+document.getElementById('menu-button').addEventListener('click', function() {
+  document.querySelector('.mobile-nav').classList.add('active');
+});
 
-  updateDateTime();
-  setInterval(updateDateTime, 60000);
-  fetchWeather();
+// Close the mobile nav
+document.querySelector('.mobile-nav .close-btn').addEventListener('click', function() {
+  document.querySelector('.mobile-nav').classList.remove('active');
+});
+
 });
 
 // Make sure the songData is populated before calling this function
@@ -101,29 +107,8 @@ function closePopup() {
 
 
 
-  function updateDateTime() {
-    const now = new Date();
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    document.getElementById("date").textContent = "Date: " + now.toLocaleDateString("en-US", options);
-    document.getElementById("time").textContent = "Time: " + now.toLocaleTimeString("en-US");
-  }
-  function fetchWeather() {
-    const apiKey = "fd31b6f4f5d9fcdeca9b39a97bacc424"; // Replace with your actual API key
-    const city = "Providence, US";
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
-      .then(response => response.json())
-      .then(data => {
-        if (data && data.main && typeof data.main.temp !== 'undefined') {
-          const temp = (data.main.temp - 273.15).toFixed(1);
-          document.getElementById("weather-data").textContent = `${temp}°C in ${city}`;
-        } else {
-          throw new Error('Temperature data is not available.');
-        }
-      })
-      .catch(error => {
-        console.error("There was a problem with fetching the weather data:", error);
-      });
-  }
+
+ 
 
 // Filter and grid functionality
 const filters = document.getElementById("filters");
@@ -363,9 +348,9 @@ function smoothScrollTo(element, duration) {
 
 function highlightCitation(refId, citationId) {
   // Clear all previous highlights
-  // document.querySelectorAll('.highlighted').forEach(function(element) {
-  //   element.classList.remove('highlighted');
-  // });
+  document.querySelectorAll('.highlighted').forEach(function(element) {
+    element.classList.remove('highlighted');
+  });
 
   // Highlight the reference in the text
   var refElement = document.getElementById(refId);
@@ -382,4 +367,16 @@ function highlightCitation(refId, citationId) {
   }
 }
 
+function toggleMenu() {
+  document.querySelector('.side-nav').classList.toggle('side-nav-active');
+  // If you're using a different class for the mobile menu, toggle that class instead.
+}
 
+document.getElementById('hamburger-menu').addEventListener('click', function() {
+  console.log('Hamburger menu clicked');
+  document.querySelector('.mobile-nav').classList.add('active');
+});
+
+document.querySelector('.close-btn').addEventListener('click', function() {
+  document.querySelector('.mobile-nav').classList.remove('active');
+});

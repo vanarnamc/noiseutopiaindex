@@ -11,8 +11,19 @@
 </head>
 
 <body>
+  <header class="top-header">
+    <button id="menu-button">MENU</button>
+
+    </div></header>
+  
   <div class="container">
+    <!-- Mobile Nav (Hidden on larger screens) -->
+<div class="mobile-nav">
+  <button class="close-btn">&times;</button>
+  <!-- Navigation links go here -->
+</div>
     <nav class="side-nav">
+     
       <!-- Side navigation content goes here -->
       <div>
         <div>
@@ -100,8 +111,8 @@
         <button class="close-btn" onclick="closePopup()">X</button>
 
         <div class="popup-content">
-          <h1 id="songTitle"></h1>
-          <h2 id="songAuthor"></h2>
+          <div id="songTitle"></div>
+          <div id="songAuthor"></div>
           <div id="songContent">
             <p id="description1" class="song-description"></p>
           </div>

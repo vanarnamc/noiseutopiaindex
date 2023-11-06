@@ -56,6 +56,46 @@
     position: relative;
   }
 
+  .top-header {
+    position: fixed; /* Keeps the header at the top on scroll */
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff; /* Or any other color */
+    z-index: 1000; /* Ensure it's above other content */
+    justify-content: space-between; /* Adjusts the space between items */
+    align-items: center; /* Vertically aligns items in the center */
+    padding: 0px; /* Add some space around the content */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow for depth */
+  }
+
+/* Style for the menu button */
+#menu-button {
+  cursor: pointer;
+  background-color: #000; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  padding-left: 20px; /* Increase padding for larger clickable area */
+  padding-top: 10px; /* Increase padding for larger clickable area */
+  padding-bottom: 10px; /* Increase padding for larger clickable area */
+  padding-right: 20px; /* Increase padding for larger clickable area */
+  font-family: "ABC ROM Mono Unlicensed Trial", sans-serif;
+  font-size: 1rem; /* Use responsive font sizing */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for color change */
+  display: inline-block; /* Ensures that padding and dimensions are respected */
+  text-align: center;
+  width: auto; /* Ensures the button width is as wide as its content plus padding */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  z-index: 10; /* Ensure it is above other content but adjust as needed */
+}
+
+#menu-button:hover {
+  background-color: #fff; /* Button hover background color */
+  color: #000; /* Button hover text color */
+
+}
+
   .side-nav {
     flex: 0.25;
     /* Take up 25% of the parent's height */
@@ -82,7 +122,11 @@
     /* Arrange children vertically */
     justify-content: space-between;
     /* Push .web-player to the bottom */
+
+
   }
+  /* When active, slides the side navigation into view */
+
 
   .stars {
     display: block;
@@ -200,12 +244,10 @@ background-color: #2e5ec0;
     filter: brightness(1);
   }
 /* Popup Styles */
-/* Assuming .popup-overlay is the class for your popup */
 
  .popup-overlay {
   position: fixed; /* Stays in place during scroll */
   top: 25%;
-  width: calc(75% - 70px); /* 75% is the width of .content-container, 40px is total horizontal margin */
   display: none; /* Make sure to toggle this with JavaScript */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background: #000000;
@@ -222,7 +264,7 @@ background-color: #2e5ec0;
   display: flex; /* Use flexbox for layout */
   flex-direction: column; /* Stack children vertically */
   width: 100%; /* Full width of the parent .popup-overlay */
-  padding-left: 50px; /* Padding inside the popup */
+  padding-left: 20px; /* Padding inside the popup */
   padding-right: 50px; /* Padding inside the popup */
   padding-top: 10px; /* Padding inside the popup */
 
@@ -237,13 +279,17 @@ background-color: #2e5ec0;
 .close-btn {
   position: absolute; /* Position the button absolutely within the popup */
   top: 10px; /* Adjust the value to suit your design */
-  left: 10px; /* Adjust the value to suit your design */
+  right: 10px; /* Adjust the value to suit your design */
   z-index: 1002; /* Ensure it's above the popup content */
   cursor: pointer;
   color: #fff;
   background: none;
   font-size: 30px;
   font-family: ABC ROM Reg;
+  /* ...other styles... */
+}
+.close-btn:hover {
+  color: #2e5ec0;
   /* ...other styles... */
 }
 
@@ -253,22 +299,25 @@ background-color: #2e5ec0;
   text-transform: uppercase;
   margin: 0;
   line-height: 1;
+  margin-top: 10px;
+  color: white;
 
 }
 
 .song-description{
-  font-family: "ABC ROM Reg";
+  font-family: "ABC ROM Light";
   color:#ffffff;
-  font-size: 32px;
+  font-size: 40px;
 
   margin: 10px;
-  line-height: 1.3;
+  line-height: 1.2;
 
 }
 
 #songAuthor{
   font-size: 16px;
   font-family: "ABC ROM Mono Unlicensed Trial";
+  color: white;
 
   margin: 10px;
   line-height: 1;
@@ -331,54 +380,63 @@ p{
 }
 
 
-  #filters {
-    position: sticky;
-    /* Start out as absolute */
-    top: 0;
-    /* Position at the top */
-    left: 0;
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
+/* Base styles for the mobile nav, hidden by default */
+.mobile-nav {
+  position: fixed;
+left:0;
 
-    z-index: 10000;
+  top: -100vh;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  z-index: 9999999999;
+  transition: top 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
 
-    display: flex; /* Use flexbox layout */
-    flex-wrap: wrap; /* Allow the buttons to wrap as needed */
-    justify-content: flex-start; /* Space out the buttons evenly */
-    align-items: center; /* Align buttons vertically */
-    gap: 7px; /* Optional: add a gap between buttons */    
-  }
+/* Close button inside the mobile nav */
+.mobile-nav .close-btn {
+  align-self: flex-end;
+  font-size: 2rem;
+  margin: 1rem;
+}
+.mobile-nav.active {
+  top: 0;
+}
+.filters {
+  position: sticky;
+  /* Start out as absolute */
+  top: 10px;
+  /* Position at the top */
+  left: 0;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  z-index: 999;
+  display: flex; /* Use flexbox layout */
+  flex-wrap: wrap; /* Allow the buttons to wrap as needed */
+  justify-content: flex-start; /* Space out the buttons evenly */
+  align-items: flex-start; /* Align buttons to the top */
+  gap: 7px; /* Optional: add a gap between buttons */
+}
 
-  .filter-button {
-    flex: 1;
-    padding: 10px 20px;
-    /* Adds padding inside the button */
+.filter-button {
+  flex: 0, 0, auto; /* Prevent buttons from growing */
+  padding: 10px 20px; /* Adds padding inside the button */
+  height: 50px;
+  background-color: #000; /* Sets the background color of the button */
+  color: #fff; /* Sets the text color of the button */
+  border: none; /* Removes the border */
+  border-radius: 0px; /* Makes the corners rounded */
+  cursor: pointer; /* Changes the cursor to a hand when hovering over the button */
+  text-align: left; /* Aligns the text to the left */
+  display: inline-block; /* Allows multiple buttons to be on the same line */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  text-transform: uppercase;
+  font-family: ABC ROM Mono Unlicensed Trial;
+}
 
-    height: 50px;
-    max-width: 150px;
-    /* Adds margin outside the button */
-    background-color: #000;
-    /* Sets the background color of the button */
-    color: #fff;
-    /* Sets the text color of the button */
-    border: none;
-    /* Removes the border */
-    border-radius: 0px;
-    /* Makes the corners rounded */
-    cursor: pointer;
-    /* Changes the cursor to a hand when hovering over the button */
-    text-align: center;
-    /* Centers the text within the button */
-    display: inline-block;
-    /* Allows multiple buttons to be on the same line */
-    transition: background-color 0.3s;
-    /* Smooth transition for hover effect */
-    text-transform: uppercase;
-    font-family: ABC ROM Mono Unlicensed Trial;
-
-    
-  }
   .filter-button:hover {
 background-color: #fff; /* Inverts background color */
 color: #000; /* Inverts text color */
@@ -429,7 +487,7 @@ color: #000; /* Inverts text color */
     color: #fff;
     /* Text color on overlay */
     transition: background-color 0.3s;
-    z-index: 1000;
+    z-index: 100;
     /* Add a smooth transition effect for background color */
   }
 
@@ -486,9 +544,6 @@ color: #000; /* Inverts text color */
   }
 
 
-
-
-
   .web-player {
     width: 100%;
     border-radius: 10px;
@@ -503,11 +558,7 @@ color: #000; /* Inverts text color */
     border: none;
   }
 
-  .side-nav-weather {
-    margin-bottom: 20px;
-  }
 
- 
 
   .soundcloud-player-button {
     /* background-color: #7e7e7e; */
@@ -562,12 +613,16 @@ color: #000; /* Inverts text color */
     grid-template-columns: 1fr; /* Only one column now */
     padding-left: 20px;
     padding-right: 20px;
-    gap: 10px; /* Space between items */
     font-family: "ABC ROM Reg";
     font-size: 26px;
+    gap: 10px;
    
   }
-  
+  /* Underline spans on hover within the about-text class */
+.about-text span[id^="ref-"]:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
   .citation {
     /* No display property needed; it's a grid item */
     display: grid;
@@ -595,3 +650,56 @@ padding-right: 20px;
   .citation-year {
     text-align: left;
   }
+
+
+@media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+
+ .content-container {
+   position: relative;
+   width: 100%;
+   /* set the width of the content to 75% of the viewport */
+   margin-left: 0;
+   /* push content to the right, leaving space for the side nav */
+   /* set as a reference for absolute positioning of children */
+ }
+ #filters {
+   overflow-x: auto; /* Allows horizontal scrolling */
+   white-space: nowrap; /* Prevents wrapping of filter buttons */
+   display: flex; /* Keeps the buttons in line */
+   flex-wrap: nowrap; /* Prevents wrapping of items */
+   gap: 7px; /* Optional: Adjust or remove the gap if needed */
+   margin-top: 0px; /* Adjust the margin as needed */
+   margin-bottom: 10px; /* Adjust the margin as needed */
+   padding: 50px 0; /* Adds padding to the top and bottom */
+ }
+.side-nav{
+  display: none;
+}
+ .grid-container {
+   width: 100%;
+   column-count: 2;
+   column-gap: 7px;
+   padding: 20px;
+   box-sizing: border-box;
+   margin-top: -65px;  
+ }
+ .filter-button {
+   display: inline-block; /* Ensures buttons line up horizontally */
+   flex: 0 0 auto; /* Prevents the buttons from growing or shrinking */
+ }
+
+ .top-header {
+   display: flex; /* Now display the header on small screens */
+   height: auto;
+   background-color: black;
+   margin-bottom: 100px;
+
+   /* ... other styles ... */
+ }
+
+ 
+ .side-nav-links.active {
+   display: flex; /* Show as flexbox when active */
+ }
+ 
+}
