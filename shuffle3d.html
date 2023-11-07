@@ -103,9 +103,30 @@ scene.add(directionalLight);
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
-    document.addEventListener('mousemove', onDocumentMouseMove, false);
+    document.addEventListener('pointermove', onPointerMove, false);
+    document.addEventListener('touchstart', onDocumentTouchStart, false);
+
     document.addEventListener('click', onDocumentClick, false);
     window.addEventListener('resize', onWindowResize, false);
+}
+function onPointerMove(event) {
+    // Call the same function as for mouse move
+    onDocumentMouseMove(event);
+}
+
+function onDocumentTouchStart(event) {
+    // Prevent the default touch behavior like scrolling
+    event.preventDefault();
+    // If there's only one finger inside this element
+    if (event.touches.length === 1) {
+        // Calculate mouse position in normalized device coordinates
+        // (-1 to +1) for both components
+        mouse.x = (event.touches[0].pageX / window.innerWidth) * 2 - 1;
+        mouse.y = - (event.touches[0].pageY / window.innerHeight) * 2 + 1;
+        
+        // Call the same function as for mouse click
+        onDocumentClick(event);
+    }
 }
 
 function onWindowResize() {

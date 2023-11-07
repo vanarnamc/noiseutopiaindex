@@ -6,8 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(json => {
       songData = json;
       if (songData && songData.songs.length > 0) {
-
-      setupSoundCloudPlayer(songData.songs[0]); // Setup player with the first song
+        // Select a random song from the array
+        const randomIndex = Math.floor(Math.random() * songData.songs.length);
+        setupSoundCloudPlayer(songData.songs[randomIndex]); // Setup player with a random song
       }
       populateGridAndFilters(); // Populate grid and filters
     });
@@ -84,19 +85,19 @@ function openPopup(songUrl) {
     return;
   }
 
+  // Set the content for the first description
   document.getElementById('songTitle').textContent = songDetails.title;
   document.getElementById('songAuthor').textContent = songDetails.author;
-  document.getElementById('image1').src = songDetails.image1;
-  document.getElementById('image2').src = songDetails.image2;
+  document.getElementById('description1').textContent = songDetails.description1 || "Description 1 not available";
+  
+  // Set the content for the second description
+  // Ensure you have an element with the ID 'description2' in your HTML
+  document.getElementById('description2').textContent = songDetails.description2 || "Description 2 not available";
 
-  const description1Element = document.getElementById('description1');
-  const description2Element = document.getElementById('description2');
-
-  description1Element.textContent = songDetails.description1 || "Description 1 not available";
-  description2Element.textContent = songDetails.description2 || "Description 2 not available";
-
+  // Display the popup
   document.getElementById('songPopup').style.display = 'block';
 }
+
 
 
 function closePopup() {
