@@ -96,6 +96,19 @@
 
 }
 
+#home-button {
+  position: absolute;
+  top: 10px; /* Adjust the top position as needed */
+  left: 10px; /* Adjust the left position as needed */
+  padding: 10px 20px;
+  background-color: #0077FF; /* Button background color */
+  color: white; /* Button text color */
+  text-decoration: none; /* Remove underlines from links */
+  border: none;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
   .side-nav {
     flex: 0.25;
     /* Take up 25% of the parent's height */
@@ -114,7 +127,7 @@
     overflow-y: scroll;
     padding: 0;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 20px;
 
     display: flex;
     /* Set it as a flex container */
@@ -303,6 +316,24 @@ background-color: #2e5ec0;
   color: white;
 
 }
+#popupImage1{
+padding: 10px;
+  height: 100%;
+
+}
+#popupImage2{
+  padding: 10px;
+  height: 100%
+
+
+ 
+
+}
+
+#songImages{
+  display: flex;
+  justify-content: space-between; /* Distribute space equally between child divs */  
+}
 
 .song-description{
   font-family: "ABC ROM Light";
@@ -322,15 +353,8 @@ background-color: #2e5ec0;
   margin: 10px;
   line-height: 1;
 }
-.image-container {
-  display: flex;
-  max-width: 100%;
-  /* Ensure the images don't exceed the container width */
-  gap: 20px;
-  /* Adjust the gap as needed */
-}
 .image-container img {
-  max-width: 50%; /* Adjust the percentage as needed */
+  max-width: 100%; /* Adjust the percentage as needed */
   height: auto; /* Maintain the image's aspect ratio */
   flex: 1; /* Distribute available space equally between images */
 }
@@ -345,7 +369,8 @@ background-color: #2e5ec0;
 .clickable {
   cursor: pointer;
 }
-
+#playButton{
+margin-top: 5px;}
 
 
 h1{

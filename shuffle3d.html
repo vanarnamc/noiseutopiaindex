@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UTOPIA SHUFFLE</title>
+    <link rel="stylesheet" href="style.css">
+    <style></style>
+  </head>
+  <body>
+    <div id="loading-overlay">
+        <div id="loading-spinner"></div>
+      </div>
+    <!-- <div id="overlay" style="position: absolute; display: none; pointer-events: none; padding: 10px; background: rgba(0, 0, 0, 0.5); color: white;"></div> -->
+    <a id="home-button" href="index.html" style="z-index: 99999999999999;">Home</a>
+
+    <script type="module">
+ import * as THREE from 'https://unpkg.com/three@latest/build/three.module.js';
+
+var camera, scene, renderer, raycaster, mouse;
+var windowHalfX = window.innerWidth / 2;
+var windowHalfY = window.innerHeight / 2;
+var INTERSECTED; // Define INTERSECTED in the global scope
+
+
+
+async function fetchLinks() {
+    const response = await fetch('info.json');
+    const data = await response.json();
+    console.log("Fetched links:", data);
+    return data.Sheet1;
+}
+
+async function init() {
+    const linksData = await fetchLinks();
+
+    camera = new THREE.PerspectiveCamera(200, window.innerWidth / window.innerHeight, 50, 10000);
+    camera.position.z = 100;
+
+    raycaster = new THREE.Raycaster();
+    mouse = new THREE.Vector2();
+
+    scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x00000); // Set the scene background color to purple
+
+    const loader = new THREE.TextureLoader();
+
+for (const entry of linksData) {
+    // Check if the image filename is defined and not in an unexpected format
+    if (entry.image && typeof entry.image === 'string' && !entry.image.includes('http')) {
+        // Use the local path to the images folder and the filename from the JSON entry
+        const imagePath = `assets/images/${entry.image}`;
+        try {
+            const texture = await loader.loadAsync(imagePath);
+            texture.encoding = THREE.sRGBEncoding;
+
+            texture.flipY = false; // Add this line to prevent the texture from being flipped
+
+                // Initialize the material with the loaded texture
+                const material = new THREE.SpriteMaterial({ map: texture, emissive: 0x000000 });
+
+            // Flip the texture horizontally
+material.map.repeat.set(-1, 1);
+material.map.offset.set(1, 0);
+material.map.needsUpdate = true;
+
+            const sprite = new THREE.Sprite(material);
+            sprite.scale.set(200, 200, 1);
+            sprite.position.set(
+                Math.random() * 1600 - 800, 
+                Math.random() * 1200 - 600, 
+                Math.random() * 800 - 400
+            );
+            sprite.lookAt(camera.position);
+
+            sprite.userData = {
+    url: entry.link,
+    title: entry.title, // Assuming you have a title in your JSON data
+    name: entry.name    // Assuming you have a name in your JSON data
+};
+            scene.add(sprite);
+        } catch (error) {
+            console.warn(`Could not load image at ${imagePath}:`, error);
+        }
+    } else {
+        // If the image is not defined or in an unexpected format, log a message and skip it
+        console.log(`Skipping entry due to undefined or invalid image:`, entry);
+    }
+}
+
+var directionalLight = new THREE.DirectionalLight(0xffffff, 0.5); // Adjust the intensity as needed
+directionalLight.position.set(0, 1, 0); // Adjust the position as needed
+scene.add(directionalLight);
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.toneMapping = THREE.ReinhardToneMapping;
+    renderer.toneMappingExposure = 0.5; // Adjust the exposure to control brightness
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    document.addEventListener('mousemove', onDocumentMouseMove, false);
+    document.addEventListener('click', onDocumentClick, false);
+    window.addEventListener('resize', onWindowResize, false);
+}
+
+function onWindowResize() {
+    windowHalfX = window.innerWidth / 2;
+    windowHalfY = window.innerHeight / 2;
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+
+function onDocumentMouseMove(event) {
+    // event.preventDefault();
+
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera);
+    var intersects = raycaster.intersectObjects(scene.children);
+
+    if (intersects.length > 0) {
+        // If we're intersecting something, change the cursor and color
+        if (INTERSECTED != intersects[0].object) {
+            // Reset the previous intersection object
+            if (INTERSECTED) INTERSECTED.material.color.set(INTERSECTED.currentHex);
+            INTERSECTED = intersects[0].object;
+            INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
+            // Change the sprite's material color to red
+            INTERSECTED.material.color.set(0xBE0E1E);
+        }
+        document.body.style.cursor = 'pointer';
+    } else {
+        // If we're not intersecting anything, reset the cursor and color
+        if (INTERSECTED) INTERSECTED.material.color.set(INTERSECTED.currentHex);
+        INTERSECTED = null;
+        document.body.style.cursor = 'default';
+    }
+}
+
+
+function onDocumentClick(event) {
+    event.preventDefault();
+
+    raycaster.setFromCamera(mouse, camera);
+    
+    var intersects = raycaster.intersectObjects(scene.children);
+    
+    if (intersects.length > 0) {
+        const url = intersects[0].object.userData.url;
+        if (url) window.open(url, '_blank');
+    }
+}
+function animate() {
+    requestAnimationFrame(animate);
+
+    // Easing the movement with a damping factor, e.g., 0.05
+    // This will still allow the camera to move with mouse movement
+    camera.position.x += (mouse.x * 500 - camera.position.x) * 0.05;
+    camera.position.y += (-mouse.y * 500 - camera.position.y) * 0.05;
+
+    camera.lookAt(scene.position);
+
+    // Ambient animation for each sprite
+    scene.children.forEach(function(child) {
+        if (child instanceof THREE.Sprite) {
+            // Rotate each sprite around the Y-axis
+            child.rotation.y += 0.005;
+
+            // Move each sprite up and down along the Z-axis
+            // The Math.sin function creates a smooth oscillation
+        }
+    });
+
+    render();
+}
+
+function render() {
+    camera.lookAt(scene.position);
+
+    raycaster.setFromCamera(mouse, camera);
+
+    var intersects = raycaster.intersectObjects(scene.children);
+
+    for (var i = 0; i < intersects.length; i++) {
+        intersects[i].object.scale.set(225, 225, 1); // Scale up when hovered
+    }
+
+    renderer.render(scene, camera);
+}
+
+init().then(animate);
+document.getElementById('home-button').addEventListener('click', function(event) {
+    window.location.href = this.getAttribute('href');
+});
+
+  </script> 
+  </body>
+</html>

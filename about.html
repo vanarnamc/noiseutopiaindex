@@ -12,85 +12,80 @@
 
 <body>
   <div class="container">
-    <div id="hamburger-menu" onclick="toggleMenu()">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+    <div class="mobile-nav">
+      <button class="close-btn">&times;</button>
+      <!-- Navigation links go here -->
     </div>
-
-    <nav class="side-nav">
-      <!-- Side navigation content goes here -->
-      <div>
-        <div>
-          <a href="index.html" style="color:white">
-          UTOPIAN NOISE INDEX</a>
-          <br />
-          <span class="stars">**********************************</span>
-        </div>
-        <div class="side-nav-paragraph">
-          The noise utopia index is a cummulted collection of ways various
-          artists, musicians, and thinkers have explored the idea of creating
-          a better world through noise. Here, noise is defiined as some sort
-          of disruption into the larger system. For this specific collection,
-          the criteria has to relate to sound. Sound is crucial element in the
-          way we have originally perceived noise, and this collection hopes to
-          open a wider understanding in different ways to communicate through
-          noise. The noise utopia index is a cummulted collection of ways
-          various artists, musicians, and thinkers have explored the idea of
-          creating a better world through noise. The noise utopia index is a cummulted collection of ways
-          various artists, musicians, and thinkers have explored the idea of
-          creating a better world through noise.
-
-        </div>
-        <!-- <div class="side-nav-weather">
-       
-          <div class="current-date" id="date">Date: Loading...</div>
-          <div class="current-time" id="time">Time: Loading...</div>
-          <div class="current-weather">
-            Weather: <span id="weather-data">Loading...</span>
+        <nav class="side-nav">
+         
+          <!-- Side navigation content goes here -->
+          <div>
+            <div>
+            NOISE UTOPIA INDEX
+            <br />
+            <span class="stars">**********************************</span></div>
+            <div class="side-nav-paragraph">
+              The Noise Utopia Index is a cummulted collection of ways various
+              artists, musicians, and thinkers have explored the idea of creating
+              a better world through noise. Here, noise is defiined as some sort
+              of disruption into the larger system. For this specific collection,
+              the criteria has been filtered for sound. Sound is a crucial element in the
+              way we have originally perceived noise, and this collection hopes to
+              open a wider understanding in different ways to communicate through
+              noise. 
+              
+            </div>
+            <!-- <div class="side-nav-weather">
+           
+              <div class="current-date" id="date">Date: Loading...</div>
+              <div class="current-time" id="time">Time: Loading...</div>
+              <div class="current-weather">
+                Weather: <span id="weather-data">Loading...</span>
+              </div>
+            </div> -->
           </div>
-        </div> -->
-      </div>
-
-
-
-      <div>
-        <!-- menu links -->
-        <div class="side-nav-links">
-          <a href="index.html">HOME ↗</a>
-          <a href="about.html">[ABOUT PROJECT]</a>
-          <a href="#">MIX INDEX ↗</a>
-        </div>
-
-        <!-- weather time etc  -->
-
-
-
-        <div>
-          <div class="currently-playing clickable">NOISE MIX PLAYER</div>
-
-          <div class="white-line"></div>
-          <div class="web-player" style="width: 100%;">
-            <div class="soundcloud-player-button">
-              <button id="playButton" data-playing="false" style="background: none; cursor: pointer">
-                <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                  preserveAspectRatio="xMidYMid meet" width="40px" height="100%">
-                  <path d="M8 5v14l11-7z" fill="#ffffff" />
-                </svg>
-                <svg class="stop-icon" style="display: none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                  preserveAspectRatio="xMidYMid meet" width="40px" height="100%">
-                  <path d="M6 6h12v12H6z" fill="#ffffff" />
-                </svg>
-              </button>
+    
+            
+          
+         <div>
+          <!-- menu links -->
+          <div class="side-nav-links">
+            <a href="index.html">[HOME]</a>
+            <a href="about.html">ABOUT PROJECT ↗</a>
+            <a href="shuffle3d.html">SHUFFLE 3D ↗</a>
+          </div>
+    
+          <!-- weather time etc  -->
+         
+           
+    
+            <div>
+            <div class="currently-playing clickable">NOISE MIX PLAYER</div>
+            
+            <div class="white-line"></div>
+            <div class="web-player" style="width: 100%;">
+              <div class="soundcloud-player-button">
+                <button id="playButton" data-playing="false" style="background: none; cursor: pointer">
+                  <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    preserveAspectRatio="xMidYMid meet" width="40px" height="100%">
+                    <path d="M8 5v14l11-7z" fill="#ffffff" />
+                  </svg>
+                  <svg class="stop-icon" style="display: none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    preserveAspectRatio="xMidYMid meet" width="40px" height="100%">
+                    <path d="M6 6h12v12H6z" fill="#ffffff" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+          </div>
+    
+          <div id="soundcloud-player" style="display: none">
+            <!-- The SoundCloud player will be embedded here -->
+          </div>
+        </nav>
 
-      <div id="soundcloud-player" style="display: none">
-        <!-- The SoundCloud player will be embedded here -->
-      </div>
-    </nav>
+
 
     <!-- Filters Section -->
 
@@ -101,98 +96,106 @@
     <div class="about-content-container">
       <!-- This is where the new about page content will go -->
 
-    
-        <p class="about-text">
-          UTOPIAN NOISE INDEX <br><br>
-        
-          Human culture is built on auditory experience, where sound is not just heard but felt, and deeply understood.
-          This project is an attempt to curate a selection of the intersection of music and noise, through ideas of
-          utopia. Each entry, whether an ambient composition, an essay, or a disco track represents a disruption in the
-          systems at large. From the ideas of radical peace, and slowness inspired by <span id="ref-01"><a href="#citation1" onclick="highlightCitation('ref-01', 'citation1');">ambient music [01]</a></span>, to the house tracks created in <span id="ref-02"><a href="#citation2" onclick="highlightCitation('ref-02', 'citation2');">Detroit [02]</a></span> to push back
-          against the dominant class, this index represents a curation towards a way to imagine a different world through
-          sound. <!-- Add more content about the project here -->
-        </p>
-        <p class="about-text">
-          This index celebrates the pioneers of sound who have thought in radical ways of creating moments of peace, and
-          who have pushed the boundaries of what is musically possible. From the<span id="ref-03"><a href="#citation3" onclick="highlightCitation('ref-03', 'citation3');">singing sands [03]</a></span>that add to the
-          humbling aspect of nature, and how little we know, to the<span id="ref-04"><a href="#citation4" onclick="highlightCitation('ref-04', 'citation4');">ancient shamans [04]</a></span> to artists working with
-          <span id="ref-05"><a href="#citation5" onclick="highlightCitation('ref-05', 'citation5');">generative music [05]</a></span> to platforms rethinking media structures, the curation offers new possibilities in the
-          world of noise, and sound.
-        </p>
-        <p class="about-text">
-          Echo of Utopia’s mission is to preserve the legacy of the musicians, writers, and more who have contributed to
-          the idea of creating a world of sonic legacy, and harmony. Artist like Brian Eno, who coined the term<span id="ref-06"><a href="#citation6" onclick="highlightCitation('ref-06', 'citation6');">Ambient
-          Music [06]</a></span> in 1973, which led to artists such as Grouper who creates ethereal layers inspired by Eno’s thoughts.
-          But past music alone, the index is also interested in preserving new ways to think of sound like the<span id="ref-07"><a href="#citation7" onclick="highlightCitation('ref-07', 'citation7');">Laughter
-          Workshop [07]</a></span>led by Laraaji or the<span id="ref-08"><a href="#citation8" onclick="highlightCitation('ref-08', 'citation8');">Aeolian Interface Project [08]</a></span>, which aimed to bridge new ways to generate
-          sound through nature.
-        </p>
+
+
+      <p class="about-text">
+        UTOPIAN NOISE INDEX <br><br>
+        Human culture is built on auditory experience, where sound is not just heard but felt, and deeply understood.
+        This project is an attempt to curate a selection sound, through ideas of utopia. Each entry, whether an ambient
+        composition, an essay, or a disco track represents a disruption in larger systems of power. From the ideas of
+        radical peace, and slowness inspired by ambient music, and radio stations such as <span id="ref-01"><a
+            href="#citation1" onclick="highlightCitation('ref-01', 'citation1');">St Giga [01]</a></span>. To the<span
+          id="ref-02"><a href="#citation2" onclick="highlightCitation('ref-02', 'citation2');"> birth of techno in
+            Detroit [02]</a></span>, a genre that emerged as a response to the economic and social conditions of the
+        city during that time. This index represents a curation towards a way to imagine a different world through
+        sound. It is a selection of voices that acted as noise to the systems at large.
+      </p>
+      <p class="about-text">
+        UNI’s mission is to preserve the legacy of the musicians, writers, and more who have contributed to the idea of
+        creating a world of sonic legacy, and harmony. Artist like Brian Eno, who coined the term <span id="ref-03"><a
+            href="#citation3" onclick="highlightCitation('ref-03', 'citation3');">Ambient Music [03]</a></span> in 1973,
+        which led to artists such as <span id="ref-04"><a href="#citation4"
+            onclick="highlightCitation('ref-04', 'citation4');">Grouper [04]</a></span> who creates ethereal layers
+        inspired by Eno’s thoughts. But past music alone, the index is also interested in preserving new ways to think
+        of sound and the body, like the <span id="ref-05"><a href="#citation5"
+            onclick="highlightCitation('ref-05', 'citation5');">Laughter Workshop [05]</a></span> led by Laraaji or the
+        <span id="ref-06"><a href="#citation6" onclick="highlightCitation('ref-06', 'citation6');">Aeolian Interface
+            Project [06]</a></span>, which aimed to bridge new ways to generate sound through nature.
+      </p>
+      <p class="about-text">
+        This index celebrates the pioneers of sound who have thought in radical ways of creating moments of peace, and
+        who have pushed the boundaries of what is musically possible. UNI aims to give voice to researchers and
+        scientists, such as the scientists who research the <span id="ref-07"><a href="#citation7"
+            onclick="highlightCitation('ref-07', 'citation7');">phenomenon of the singing sands [07]</a></span> that add
+        to the humbling aspect of nature. Or the Chladni plate archive, which is used to demonstrate the various modes
+        of vibration on a rigid surface. UNI also hopes to celebrate artists working with <span id="ref-08"><a
+            href="#citation8" onclick="highlightCitation('ref-08', 'citation8');">generative music [08]</a></span> to
+        platforms rethinking media structures, the curation offers new possibilities in the world of noise, and sound.
+      </p>
 
       </p>
-      
+
       <div class="citations">
-        <a href="http://example.com/link1" target="_blank" class="citation" id="citation1">
+        <a href="https://archive.org/details/StGigaManual/mode/2up" target="_blank" class="citation" id="citation1">
           <span class="citation-number-author">
-          <span class="citation-number">[01]</span>
-          <span class="citation-author">Brian Eno</span></span>
+            <span class="citation-number">[01]</span>
+            <span class="citation-author">St Giga</span></span>
+          <span class="citation-title">St Giga Manual</span>
+          <span class="citation-year">1981</span>
+        </a>
+        <a href="https://www.youtube.com/watch?v=SYSagw7v4dU" target="_blank" class="citation" id="citation2">
+          <span class="citation-number-author">
+            <span class="citation-number">[02]</span>
+            <span class="citation-author">Much Music</span></span>
+          <span class="citation-title">Detroit The Blueprint of Techno</span>
+          <span class="citation-year">1998</span>
+        </a>
+        <a href="https://audioweb.sitehost.iu.edu/T369/eno-ambient.pdf" target="_blank" class="citation" id="citation3">
+          <span class="citation-number-author">
+            <span class="citation-number">[03]</span>
+            <span class="citation-author">Brian Eno</span> </span>
           <span class="citation-title">Ambient Music</span>
-          <span class="citation-year">1979</span>
+          <span class="citation-year">1978</span>
         </a>
-        <a href="http://example.com/link2" target="_blank" class="citation" id="citation2">
+        <a href="https://youtu.be/CgpLOFunJi4?si=CcaQxre5-Kd7ZvFL" target="_blank" class="citation" id="citation4">
           <span class="citation-number-author">
-          <span class="citation-number">[02]</span>
-          <span class="citation-author">Second Author</span></span>
-          <span class="citation-title">Second Title</span>
-          <span class="citation-year">Year</span>
+            <span class="citation-number">[04]</span>
+            <span class="citation-author">Grouper</span></span>
+          <span class="citation-title">Grouper Sleep Mix</span>
+          <span class="citation-year">2019</span>
         </a>
-        <a href="http://example.com/link3" target="_blank" class="citation" id="citation3">
+        <a href="https://www.youtube.com/watch?v=XzktEXmKYCY" target="_blank" class="citation" id="citation5">
           <span class="citation-number-author">
-          <span class="citation-number">[03]</span>
-          <span class="citation-author">Third Author</span>   </span>
-          <span class="citation-title">Third Title</span>
-          <span class="citation-year">Year</span>
+            <span class="citation-number">[05]</span>
+            <span class="citation-author">Laughter Workshop</span></span>
+          <span class="citation-title">Laughter Workshop</span>
+          <span class="citation-year">2013</span>
         </a>
-        <a href="http://example.com/link4" target="_blank" class="citation" id="citation4">
+        <a href="http://ascentstage.com/aeolian/images.html" target="_blank" class="citation" id="citation6">
           <span class="citation-number-author">
-          <span class="citation-number">[04]</span>
-          <span class="citation-author">Fourth Author</span></span>
-          <span class="citation-title">Fourth Title</span>
-          <span class="citation-year">Year</span>
+            <span class="citation-number">[06]</span>
+            <span class="citation-author">M. Koetter, J. Tolva</span></span>
+          <span class="citation-title">The Aeolian Interface Project</span>
+          <span class="citation-year">1999</span>
         </a>
-        <a href="http://example.com/link5" target="_blank" class="citation" id="citation5">
+        <a href="https://www.youtube.com/watch?v=4yFaMsUawi4" target="_blank" class="citation" id="citation7">
           <span class="citation-number-author">
-          <span class="citation-number">[05]</span>
-          <span class="citation-author">Brian Eno</span></span>
-          <span class="citation-title">Ambient Music</span>
-          <span class="citation-year">1979</span>
+            <span class="citation-number">[07]</span>
+            <span class="citation-author">Stéphane Douady</span> </span>
+          <span class="citation-title">The Song of the Dunes</span>
+          <span class="citation-year">2008</span>
         </a>
-        <a href="http://example.com/link2" target="_blank" class="citation" id="citation6">
+        <a href="https://medium.com/@alexbainter/introduction-to-generative-music-91e00e4dba11" target="_blank" class="citation" id="citation8">
           <span class="citation-number-author">
-          <span class="citation-number">[06]</span>
-          <span class="citation-author">Second Author</span></span>
-          <span class="citation-title">Second Title</span>
-          <span class="citation-year">Year</span>
+            <span class="citation-number">[08]</span>
+            <span class="citation-author">Alex Bainter</span></span>
+          <span class="citation-title">Introduction to Generative Music</span>
+          <span class="citation-year">2019</span>
         </a>
-        <a href="http://example.com/link3" target="_blank" class="citation" id="citation7">
-          <span class="citation-number-author">
-          <span class="citation-number">[07]</span>
-          <span class="citation-author">Third Author</span>   </span>
-          <span class="citation-title">Third Title</span>
-          <span class="citation-year">Year</span>
-        </a>
-        <a href="http://example.com/link4" target="_blank" class="citation" id="citation8">
-          <span class="citation-number-author">
-          <span class="citation-number">[08]</span>
-          <span class="citation-author">Fourth Author</span></span>
-          <span class="citation-title">Fourth Title</span>
-          <span class="citation-year">Year</span>
-        </a>
-        <!-- Repeat for more citations if necessary -->
       </div>
-      
 
 
-      <!-- Grid items go here -->
+
     </div>
 
 
