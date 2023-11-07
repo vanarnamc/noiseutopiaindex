@@ -237,6 +237,7 @@ background-color: #2e5ec0;
     /* Set the initial background color to transparent */
     transition: background-color 0.3s, color 0.3s;
     /* Add a smooth transition effect */
+    break-inside: avoid-column;
   }
 
   .grid-item a {
@@ -727,4 +728,26 @@ padding-right: 20px;
    display: flex; /* Show as flexbox when active */
  }
  
+}
+
+
+/* 3d styles */
+
+#home-button {
+  position: fixed; /* Fixed position relative to the viewport */
+  font-family: "ABC ROM Mono Bold";
+  text-transform: uppercase;
+  left: 1vw; /* Align to the left */
+  top: 96vh; /* Align to the bottom */
+  z-index: 10; /* Ensure the button is above other elements */
+  background-color: #0079f1; /* Background color for the button */
+  color: #000000; /* Text color for the button */
+  padding: 0.5em 1em; /* Top and bottom padding of 0.5em, left and right padding of 1em */
+  cursor: pointer; /* Change cursor to indicate clickable */
+  font-size: 1rem; /* Default font size, adjust as needed */
+}
+
+#home-button:hover {
+  background-color: #fff; /* Change background color on hover */
+  color: #000000; /* Change text color on hover */
 }

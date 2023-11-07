@@ -25,7 +25,16 @@
       "category": "Album",
       "link": "https://lordoftheisles.bandcamp.com/album/my-noise-is-nothing",
       "description": "‘My Noise is Nothing’ is the collaborative LP between Lord of The Isles and Scottish poet Ellen Renton, set for release on the 29th September 2023.",
-      "image": "‘My Noise is Nothing’ is the collaborative LP between Lord of The Isles and Scottish poet Ellen Renton, set for release on the 29th September 2023."
+      "image": "2023_Lord.jpeg"
+    },
+    {
+      "year": "2023",
+      "name": "Ende Tymes 13",
+      "title": "Ende Tymes 13\nFestival of Noise and Sonic Liberation",
+      "category": "Festival",
+      "link": "https://halfnormal.com/endetymes/",
+      "description": "A festival of Noise and Sonic Liberation. Added by SADNOISE",
+      "image": "2023-endeTimes.jpeg"
     },
     {
       "year": "2022",
@@ -44,6 +53,15 @@
       "link": "http://www.sarahpeebles.net/108tokyo/Yoshimura%20English.pdf",
       "description": "Essay on “Walking through Tokyo\" audio, “sound chaos” and Asian soundscapes",
       "image": "2022_hiroshiYoshimura_walkingThroughTokyo.png"
+    },
+    {
+      "year": "2022",
+      "name": "Gábor Lázár",
+      "title": "Boundary Object",
+      "category": "Song",
+      "link": "https://gaborlazar.bandcamp.com/album/boundary-object",
+      "description": "released February 25, 2022 added by SADNOISE",
+      "image": "2022-gabor.jpeg"
     },
     {
       "year": "2021",
@@ -100,6 +118,15 @@
       "image": "2021_stevenWaller_TheRelationshipOfRockWriting.png"
     },
     {
+      "year": "2021",
+      "name": "Burial",
+      "title": "Dolphinz",
+      "category": "Song",
+      "link": "https://burial.bandcamp.com/album/chemz-dolphinz",
+      "description": "released May 21, 2021 added by SADNOISE\n",
+      "image": "2021-burial.jpeg"
+    },
+    {
       "year": "2020",
       "name": "Simon Scott",
       "title": "Migrations",
@@ -154,6 +181,33 @@
       "image": "2020_mattanniss_storyOfChillOutMusic.jpg"
     },
     {
+      "year": "2020",
+      "name": "Mark Fell & Gabor Lazar",
+      "title": "Untitled 10.5",
+      "category": "Song",
+      "link": "https://www.youtube.com/watch?v=tdQ-223z5m0",
+      "description": "released June 26, 2020\n",
+      "image": "2020-gabbor.jpeg"
+    },
+    {
+      "year": "2020",
+      "name": "Mark Fell & Will Guthrie",
+      "title": "Infoldings 1",
+      "category": "Song",
+      "link": "https://www.youtube.com/watch?v=zY1oxmsbHds",
+      "description": "Album: Infoldings - Diffractions (2020)",
+      "image": "2020-will.jpg"
+    },
+    {
+      "year": "2020",
+      "name": "Jesse Osborne-Lanthier",
+      "title": "Catchment Areas (Spiritual Pollution)",
+      "category": "Song",
+      "link": "https://jesseosbornelanthiernoir.bandcamp.com/track/catchment-areas-spiritual-pollution",
+      "description": "from Left My Brain @ Can Paixano (La Xampanyeria) OST, released September 8, 2020. Added by SADNOISE",
+      "image": "2020-jesse.jpeg"
+    },
+    {
       "year": "2019",
       "name": "Alex Bainter",
       "title": "What “Ambient” Music Means to Me",
@@ -194,7 +248,7 @@
       "name": "Grouper",
       "title": "Grouper - Sleep Mix",
       "category": "Performance",
-      "link": "https://www.youtube.com/watch?v=CgpLOFunJi4&t=1078s",
+      "link": "https://youtu.be/CgpLOFunJi4?si=CcaQxre5-Kd7ZvFL",
       "description": "Live Grouper performance.",
       "image": "2019_grouper_SleepMix.png"
     },
@@ -224,6 +278,15 @@
       "link": "http://www.sothismedias.com/home/the-lunar-phases-of-st-giga",
       "description": "Essay describing the techniques of programing for St GIGA. A Japanese ambient radio station. ",
       "image": "2019_justinPatric.png"
+    },
+    {
+      "year": "2019",
+      "name": "Floating Points",
+      "title": "Falaise",
+      "category": "Song",
+      "link": "https://floatingpoints.bandcamp.com/track/falaise",
+      "description": "from Crush, released October 18, 2019 added by SADNOISE",
+      "image": "2019-floating.jpeg"
     },
     {
       "year": "2018",
@@ -280,6 +343,15 @@
       "image": "2018_DrAtmo.png"
     },
     {
+      "year": "2018",
+      "name": "Ben Salisbury & Geoff Barrow",
+      "title": "The Alien",
+      "category": "Song",
+      "link": "https://www.youtube.com/watch?v=Fuz4ZfMX2rk",
+      "description": "Annihilation—Original Motion Picture Soundtrack, featuring a score by Ben Salisbury and Geoff Barrow. Added by SADNOISE.",
+      "image": "2018-ben.jpg"
+    },
+    {
       "year": "2017",
       "name": "Pauline Oliveros",
       "title": "Tuning Meditation",
@@ -307,6 +379,42 @@
       "image": "2017_johnHath.png"
     },
     {
+      "year": "2017",
+      "name": "Rogelio Sosa",
+      "title": "Vinylika",
+      "category": "Song",
+      "link": "https://subrosalabel.bandcamp.com/track/vinylika",
+      "description": "from An Anthology Of Noise & Electronic Music #5, released May 27, 2017\nadded by SADNOISE\n",
+      "image": "2017-rojelo.jpeg"
+    },
+    {
+      "year": "2017",
+      "name": "Gong Gong Gong 工工工",
+      "title": "壹 ONE",
+      "category": "Song",
+      "link": "https://gonggonggong.bandcamp.com/track/one",
+      "description": "from W​Ǔ​H​Ò​U SHANGHAI 午​後​上​海, released April 14, 2017\nphoto by Damo. Added by SADNOISE",
+      "image": "2017-I.jpeg"
+    },
+    {
+      "year": "2017",
+      "name": "Machine Girl",
+      "title": "Nine Minutes and Forty Three Seconds",
+      "category": "Song",
+      "link": "https://www.youtube.com/watch?v=JyV9_e_QTOc",
+      "description": "℗ 2017 Machine Girl added by SADNOISE",
+      "image": "2017-machine.jpeg"
+    },
+    {
+      "year": "2017",
+      "name": "Ryoji Ikeda",
+      "title": "Ryoji Ikeda Presents: test pattern",
+      "category": "Performance",
+      "link": "https://www.youtube.com/watch?v=jCR7KJQtwGE",
+      "description": "Developed over years, test pattern serves as a perfect introduction to the data-driven work of Ryoji Ikeda, situated precisely at the borderline between sound and light, between beauty and the sublime, whereby the artist sheds light on the mathematical forms that drive our everyday lives to approach some aesthetic understanding of the nature of our world. Added by SADNOISE",
+      "image": "2017-ryoji.jpeg"
+    },
+    {
       "year": "2016",
       "name": "Max Richter",
       "title": "SLEEP",
@@ -314,6 +422,33 @@
       "link": "https://www.youtube.com/watch?v=lHMCE-c8sUc",
       "description": "Max RIchter's Sleep performance.",
       "image": "2016_maxRichter_Sleep.png"
+    },
+    {
+      "year": "2016",
+      "name": "Grischa Lichtenberger",
+      "title": "001_0315_13_dest",
+      "category": "Song",
+      "link": "https://raster-raster.bandcamp.com/track/001-0315-13-dest",
+      "description": "Song by Grischa Lichtenberger",
+      "image": "2016-grischa1.jpeg"
+    },
+    {
+      "year": "2016",
+      "name": "Grischa Lichtenberger",
+      "title": "001_0415_07_re1214_11_ns_ss_ms​-​vc",
+      "category": "Song",
+      "link": "https://raster-raster.bandcamp.com/track/001-0415-07-re1214-11-ns-ss-ms-vc",
+      "description": "Released 2016",
+      "image": "2016-grischa.jpeg"
+    },
+    {
+      "year": "2016",
+      "name": "Eli Keszler",
+      "title": "Corresponding Probably to Quanta",
+      "category": "Song",
+      "link": "https://emptyeditions.bandcamp.com/track/corresponding-probably-to-quanta",
+      "description": "from EE001: Last Signs of Speed, released December 1, 2016 added by SADNOISE",
+      "image": "2016-eli.jpeg"
     },
     {
       "year": "2015",
@@ -370,6 +505,15 @@
       "image": "2014_vladislavDelay_Visa.jpg"
     },
     {
+      "year": "2014",
+      "name": "Consumer Electronics",
+      "title": "Teknon",
+      "category": "Song",
+      "link": "https://music.youtube.com/watch?v=bPm75Rbx3HQ",
+      "description": "Song by Consumer Electronics",
+      "image": "2014-consumer.png"
+    },
+    {
       "year": "2013",
       "name": "Huerco S.",
       "title": "Colonial Patterns",
@@ -398,8 +542,8 @@
     },
     {
       "year": "2013",
-      "name": "Laughter Workshop",
-      "title": " Laraaji with Daniel Blumberg ",
+      "name": " Laraaji with Daniel Blumberg ",
+      "title": "Laughter Workshop",
       "category": "Interview",
       "link": "https://www.youtube.com/watch?v=XzktEXmKYCY",
       "description": "Laugter workshop with Laraaji.",
@@ -413,6 +557,15 @@
       "link": "https://youtu.be/Pl-otdM6OHc?si=gwlO2iZUQMn6DGzR",
       "description": "From the album Perhaps (2013). Recorded live December 8, 2006 at a memorial event for James Tenney at California Institute of the Arts.",
       "image": "2013_haroldBudd_templar.jpg"
+    },
+    {
+      "year": "2013",
+      "name": "Milkweed",
+      "title": "It Hangs Heavy",
+      "category": "Song",
+      "link": "https://youtu.be/ufAaT-1ys34?si=SG3B4szQUW15kxGQ",
+      "description": " 2013 Sacred Bones Records",
+      "image": "2013-milkweed.png"
     },
     {
       "year": "2012",
@@ -430,7 +583,16 @@
       "category": "Album",
       "link": "https://wolfgangvoigt.bandcamp.com/album/r-ckverzauberung-6",
       "description": "Album from Wolfgang Voigt",
-      "image": "2012_wolfgangVoigt_R%E2%80%8B%C3%BC%E2%80%8Bckverzauberung%206.jpg"
+      "image": "2012_wolfgangVoigt_R​ü​ckverzauberung.jpg"
+    },
+    {
+      "year": "2012",
+      "name": "Grischa Lichtenberger",
+      "title": "66 Audio",
+      "category": "Song",
+      "link": "https://raster-raster.bandcamp.com/track/66-audio",
+      "description": "from And IV (Inertia), released October 1, 2012",
+      "image": "2012-grischa.jpeg"
     },
     {
       "year": "2011",
@@ -503,6 +665,15 @@
       "link": "https://oneohtrixpointnever.bandcamp.com/album/rifts",
       "description": "Album from Oneohtrix Point Never",
       "image": "2009_oneohtrixPointNever_rifts.jpg"
+    },
+    {
+      "year": "2009",
+      "name": "Jon Hopkins",
+      "title": "Vessel",
+      "category": "Song",
+      "link": "https://www.youtube.com/watch?v=KpGSIatpr4A",
+      "description": "℗ 2009 Just Music added by SADNOISE",
+      "image": "2009-vessel.png"
     },
     {
       "year": "2008",
@@ -1257,7 +1428,7 @@
       "category": "Song",
       "link": "https://www.youtube.com/watch?v=V5AztWseIdU",
       "description": "Original long version 1975, vocalist D. Summer, electronic music, Giorgio Moroder.",
-      "image": "1975_Donna-Summer-Giorgio-Moroder.webp"
+      "image": "1975_Donna Summer.webp"
     },
     {
       "year": "1975",
