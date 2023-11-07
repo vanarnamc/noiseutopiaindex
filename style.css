@@ -538,6 +538,7 @@ color: #000; /* Inverts text color */
     /* Text color on overlay */
     transition: background-color 0.3s;
     z-index: 100;
+
     /* Add a smooth transition effect for background color */
   }
 
@@ -732,6 +733,8 @@ padding-right: 20px;
    padding: 20px;
    box-sizing: border-box;
    margin-top: -65px;  
+
+
  }
  .filter-button {
    display: inline-block; /* Ensures buttons line up horizontally */
@@ -751,6 +754,12 @@ padding-right: 20px;
  .side-nav-links.active {
    display: flex; /* Show as flexbox when active */
  }
+
+ .overlay {
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
  
 }
 
