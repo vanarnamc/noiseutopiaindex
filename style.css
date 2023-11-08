@@ -783,6 +783,53 @@ padding-right: 20px;
 
 /* 3d styles */
 
+  /* Additional styles for moving text */
+  #loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75); /* Black with opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack children vertically */
+    z-index: 10000; /* High z-index to ensure it's above other content */
+  }
+  
+  #loading-text {
+    font-size: 2em; /* Adjust the size as needed */
+    color: white; /* Text color */
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: loading-size 2s infinite;
+    font-family: "ABC ROM Reg";
+  }
+  
+  #sound-instruction {
+    font-size: 1em; /* Adjust the size as needed */
+    color: white; /* Text color */
+    text-align: center;
+    margin-top: 20px; /* Space between the loading text and the instruction */
+    font-family: "ABC ROM Mono Unlicensed Trial";
+  }
+  
+  @keyframes loading-size {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 100;
+    }
+  }
+  /* Hide the loading screen by default and only show it via JavaScript when needed */
+  #loading-overlay.hidden {
+    display: none;
+  }
+
 #home-button {
   position: fixed; /* Fixed position relative to the viewport */
   font-family: "ABC ROM Mono Bold";

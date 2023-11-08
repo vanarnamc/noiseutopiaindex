@@ -6,13 +6,19 @@
   <link rel="icon" href="/favicon.png" type="image/png">
   <title>UTOPIA SHUFFLE</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Inline CSS for loading screen -->
+  <style>
+  
+    </style>
+
   <!-- Add the Tone.js library script -->
   <script src="https://cdn.jsdelivr.net/npm/tone@latest"></script>
 </head>
 <body>
-  <div id="loading-overlay">
-    <div id="loading-spinner"></div>
-  </div>
+    <div id="loading-overlay">
+        <div id="loading-text">Loading...</div>
+        <div id="sound-instruction">Please turn on sound</div>
+      </div>
   <a id="home-button" href="index.html">Home</a>
   <script type="module">
     import { Synth, Reverb, Compressor } from 'https://cdn.skypack.dev/tone';
@@ -77,76 +83,82 @@
     }
 
     async function init() {
-      const THREE = await import('https://unpkg.com/three@latest/build/three.module.js'); // Import THREE.js here
+  const THREE = await import('https://unpkg.com/three@latest/build/three.module.js'); // Import THREE.js here
 
-      const linksData = await fetchLinks();
+  const linksData = await fetchLinks();
 
-      camera = new THREE.PerspectiveCamera(200, window.innerWidth / window.innerHeight, 50, 10000); // Initialize the camera object
-      camera.position.z = 100;
+  camera = new THREE.PerspectiveCamera(200, window.innerWidth / window.innerHeight, 50, 10000); // Initialize the camera object
+  camera.position.z = 100;
 
-      raycaster = new THREE.Raycaster();
-      mouse = new THREE.Vector2();
+  raycaster = new THREE.Raycaster();
+  mouse = new THREE.Vector2();
 
-      scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x00000);
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x00000);
 
-      const loader = new THREE.TextureLoader();
+  const loader = new THREE.TextureLoader();
 
-      for (const entry of linksData) {
-        if (entry.image && typeof entry.image === 'string' && !entry.image.includes('http')) {
-          const imagePath = `assets/images/${entry.image}`;
-          try {
-            const texture = await loader.loadAsync(imagePath);
-            texture.encoding = THREE.sRGBEncoding;
-            texture.flipY = false;
+  for (const entry of linksData) {
+    if (entry.image && typeof entry.image === 'string' && !entry.image.includes('http')) {
+      const imagePath = `assets/images/${entry.image}`;
+      try {
+        const texture = await loader.loadAsync(imagePath);
+        texture.encoding = THREE.sRGBEncoding;
+        texture.flipY = false;
 
-            const material = new THREE.SpriteMaterial({ map: texture, emissive: 0x000000 });
+        const material = new THREE.SpriteMaterial({ map: texture, emissive: 0x000000 });
 
-            material.map.repeat.set(-1, 1);
-            material.map.offset.set(1, 0);
-            material.map.needsUpdate = true;
+        material.map.repeat.set(-1, 1);
+        material.map.offset.set(1, 0);
+        material.map.needsUpdate = true;
 
-            const sprite = new THREE.Sprite(material);
-            sprite.scale.set(200, 200, 1);
-            sprite.position.set(
-              Math.random() * 1600 - 800,
-              Math.random() * 1200 - 600,
-              Math.random() * 800 - 400
-            );
-            sprite.lookAt(camera.position);
+        const sprite = new THREE.Sprite(material);
+        sprite.scale.set(200, 200, 1);
+        sprite.position.set(
+          Math.random() * 1600 - 800,
+          Math.random() * 1200 - 600,
+          Math.random() * 800 - 400
+        );
+        sprite.lookAt(camera.position);
 
-            sprite.userData = {
-              url: entry.link,
-              title: entry.title,
-              name: entry.name
-            };
-            scene.add(sprite);
-          } catch (error) {
-            console.warn(`Could not load image at ${imagePath}:`, error);
-          }
-        } else {
-          console.log(`Skipping entry due to undefined or invalid image:`, entry);
-        }
+        sprite.userData = {
+          url: entry.link,
+          title: entry.title,
+          name: entry.name
+        };
+        scene.add(sprite);
+      } catch (error) {
+        console.warn(`Could not load image at ${imagePath}:`, error);
       }
-
-      var directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-      directionalLight.position.set(0, 1, 0);
-      scene.add(directionalLight);
-
-      renderer = new THREE.WebGLRenderer();
-      renderer.toneMapping = THREE.ReinhardToneMapping;
-      renderer.toneMappingExposure = 0.5;
-      renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      document.body.appendChild(renderer.domElement);
-
-      document.addEventListener('pointermove', onPointerMove, false);
-      document.addEventListener('touchstart', onDocumentTouchStart, false);
-
-      document.addEventListener('click', onDocumentClick, false);
-      window.addEventListener('resize', onWindowResize, false);
+    } else {
+      console.log(`Skipping entry due to undefined or invalid image:`, entry);
     }
+  }
 
+  var directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+  directionalLight.position.set(0, 1, 0);
+  scene.add(directionalLight);
+
+  renderer = new THREE.WebGLRenderer();
+  renderer.toneMapping = THREE.ReinhardToneMapping;
+  renderer.toneMappingExposure = 0.5;
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
+
+  document.addEventListener('pointermove', onPointerMove, false);
+  document.addEventListener('touchstart', onDocumentTouchStart, false);
+
+  document.addEventListener('click', onDocumentClick, false);
+  window.addEventListener('resize', onWindowResize, false);
+
+  // After everything has been set up, hide the loading screen.
+  hideLoadingScreen();
+}
+
+function hideLoadingScreen() {
+  document.getElementById('loading-overlay').classList.add('hidden');
+}
     function onPointerMove(event) {
       onDocumentMouseMove(event);
     }
@@ -242,7 +254,7 @@
       // Render the scene
       renderer.render(scene, camera);
     }
-
+   
     function render() {
       camera.lookAt(scene.position);
       raycaster.setFromCamera(mouse, camera);

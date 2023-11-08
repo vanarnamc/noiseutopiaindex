@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.png" type="image/png">
   <title>NOISE UTOPIA INDEX</title>
- 
+
   <link rel="stylesheet" href="style.css" />
   <!-- Link to an external CSS file, if needed -->
 </head>
@@ -15,26 +15,28 @@
   <header class="top-header">
     <button id="menu-button">MENU</button>
 
-    </div></header>
-  
+    </div>
+  </header>
+
   <div class="container">
-   <!-- Mobile Nav (Hidden on larger screens) -->
-<div class="mobile-nav">
-  <button class="close-btn">&times;</button>
-  <nav class="mobile-nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Project</a>
-    <a href="shuffle3d.html">Shuffle 3D</a>
-  </nav>
-</div>
+    <!-- Mobile Nav (Hidden on larger screens) -->
+    <div class="mobile-nav">
+      <button class="close-btn">&times;</button>
+      <nav class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Project</a>
+        <a href="shuffle3d.html">Shuffle 3D</a>
+      </nav>
+    </div>
     <nav class="side-nav">
-     
+
       <!-- Side navigation content goes here -->
       <div>
         <div>
-       <a href="index.html" class="home-text" style="color: white;"> NOISE UTOPIA INDEX </a>
-        <br />
-        <span class="stars">**********************************</span></div>
+          <a href="index.html" class="home-text" style="color: white;"> NOISE UTOPIA INDEX </a>
+          <br />
+          <span class="stars">**********************************</span>
+        </div>
         <div class="side-nav-paragraph">
           The Noise Utopia Index is a cummulted collection of ways various
           artists, musicians, and thinkers have explored the idea of creating
@@ -43,8 +45,8 @@
           the criteria has been filtered for sound. Sound is a crucial element in the
           way we have originally perceived noise, and this collection hopes to
           open a wider understanding in different ways to communicate through
-          noise. 
-          
+          noise.
+
         </div>
         <!-- <div class="side-nav-weather">
        
@@ -56,39 +58,39 @@
         </div> -->
       </div>
 
-        
-      
-     <div>
-      <!-- menu links -->
-      <div class="side-nav-links">
-        <a href="index.html">[HOME]</a>
-        <a href="about.html">ABOUT PROJECT ↗</a>
-        <a href="shuffle3d.html">SHUFFLE 3D ↗</a>
-      </div>
 
-      <!-- weather time etc  -->
-     
-       
+
+      <div>
+        <!-- menu links -->
+        <div class="side-nav-links">
+          <a href="index.html">[HOME]</a>
+          <a href="about.html">ABOUT PROJECT ↗</a>
+          <a href="shuffle3d.html">SHUFFLE 3D ↗</a>
+        </div>
+
+        <!-- weather time etc  -->
+
+
 
         <div>
-        <div class="currently-playing clickable">NOISE MIX PLAYER</div>
-        
-        <div class="white-line"></div>
-        <div class="web-player" style="width: 100%;">
-          <div class="soundcloud-player-button">
-            <button id="playButton" data-playing="false" style="background: none; cursor: pointer">
-              <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                preserveAspectRatio="xMidYMid meet" width="40px" height="100%">
-                <path d="M8 5v14l11-7z" fill="#ffffff" />
-              </svg>
-              <svg class="stop-icon" style="display: none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                preserveAspectRatio="xMidYMid meet" width="40px" height="100%">
-                <path d="M6 6h12v12H6z" fill="#ffffff" />
-              </svg>
-            </button>
+          <div class="currently-playing clickable">NOISE MIX PLAYER</div>
+
+          <div class="white-line"></div>
+          <div class="web-player" style="width: 100%;">
+            <div class="soundcloud-player-button">
+              <button id="playButton" data-playing="false" style="background: none; cursor: pointer">
+                <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                  preserveAspectRatio="xMidYMid meet" width="40px" height="100%">
+                  <path d="M8 5v14l11-7z" fill="#ffffff" />
+                </svg>
+                <svg class="stop-icon" style="display: none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                  preserveAspectRatio="xMidYMid meet" width="40px" height="100%">
+                  <path d="M6 6h12v12H6z" fill="#ffffff" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
       </div>
 
       <div id="soundcloud-player" style="display: none">
@@ -107,26 +109,27 @@
         <!-- Grid items go here -->
       </div>
 
-      <!-- Popup Overlay -->
-        <!-- Popup Overlay -->
-        <div class="popup-overlay" id="songPopup">
-          <button class="close-btn" onclick="closePopup()">X</button>
-  
-          <div class="popup-content">
-            <div id="songTitle"></div>
-            <div id="songAuthor"></div>
-            <div id="songContent">
-              <p id="description1" class="song-description"></p>
-            </div>
-            
-            <div id="songContent">
-              <p id="description2" class="song-description"></p>
-            </div>
-          </div>
-    </div>
-  </div>
 
-  <script src="https://w.soundcloud.com/player/api.js"></script>
-  <script src="script.js"></script>
+      <!-- Popup Overlay -->
+      <div class="popup-overlay" id="songPopup">
+        <button class="close-btn" onclick="closePopup()">X</button>
+
+        <div class="popup-content">
+          <div id="songTitle"></div>
+          <div id="songAuthor"></div>
+          <div id="songContent">
+            <p id="description1" class="song-description"></p>
+          </div>
+
+          <div id="songContent">
+            <p id="description2" class="song-description"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://w.soundcloud.com/player/api.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
