@@ -70,6 +70,11 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow for depth */
   }
 
+  .home-text:hover {
+    text-decoration: underline;
+    /* Add an underline on hover */
+  }
+
 /* Style for the menu button */
 #menu-button {
   cursor: pointer;
@@ -760,6 +765,18 @@ padding-right: 20px;
   overflow-y: scroll;
 }
 
+.about-content-container{
+  width: 100%;
+  margin-left: 0;
+  margin-top: 36px;
+}
+.about-text{
+  font-size: 28px;
+}
+.citations{
+  font-size: 12px;
+
+}
  
 }
 
